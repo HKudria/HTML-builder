@@ -1,6 +1,8 @@
 const fs = require('fs')
+const path = require("path");
 const { stdin, stdout } = process;
-let writeableStream = fs.createWriteStream('new.txt')
+
+let writeableStream = fs.createWriteStream(path.join(__dirname, 'new.txt'))
 
 stdout.write('Write some text\n');
 stdin.on('data', data => {
